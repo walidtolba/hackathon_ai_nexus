@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  /* Primary and Secondary Colors */
+  --primary-blue: #3b82f6; /* blue-500 */
+  --secondary-orange: #f97316; /* orange-500 */
+
+  /* Background Colors */
+  --background-light: #eff6ff; /* blue-50 */
+  --background-light-to: #dbeafe; /* blue-100 */
+  --background-dark: #1f2937; /* gray-800 */
+  --background-dark-to: #111827; /* gray-900 */
+
+  /* Text Colors */
+  --text-light: #1f2937; /* gray-800 */
+  --text-dark: #f3f4f6; /* gray-100 */
+
+  /* Card Background Colors */
+  --card-background-light: #ffffff;
+  --card-background-dark: #374151; /* gray-700 */
+}
+
+@layer base {
+  body {
+    @apply antialiased;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.landing-home {
+  position: relative;
+  background-image: url("../public/images/hrbg2.jpg");
+  background-size: cover;
+  z-index: 1;
+}
+.landing-home::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.4);
+  z-index: -1;
+}
